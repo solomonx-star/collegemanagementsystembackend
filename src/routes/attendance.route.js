@@ -12,7 +12,7 @@ import { markAttendanceRules, subjectIdParam, validate } from "../validators/att
 
 const router = express.Router();
 
-router.post("/mark-attendance", auth, markAttendanceRules, validate, markAttendance);
+router.post("/mark-attendance", auth, markAttendance);
 router.get("/get-attendance", auth, getMyAttendance);
 router.get("/eligibility/:subjectId", auth, subjectIdParam, validate, checkExamEligibility);
 router.get("/analytics/subject/:subjectId", auth, subjectIdParam, validate, attendanceAnalytics);
